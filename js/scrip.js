@@ -1,6 +1,7 @@
 const shopContent = document.getElementById("shopContent");
 const verCarrito = document.getElementById("verCarrito");
 const modalContainer = document.getElementById("modalContainer");
+const productosCarrito = document.getElementById("productosCarrito");
 
 
 // Hardcodeo de productos en un Array
@@ -9,33 +10,33 @@ const productos = [
         id: 3,
         nombre: "Pantalon",
         precio: 1500,
-        img: "https://www.savillerow.cl/image/cache/catalog/imagessr/50010438_khaki_1-1200x1200.jpg"
+        img: "./img/pantalon.jpg"
     },
 
     {
         id: 4,
         nombre: "Remera",
         precio: 900,
-        img: "https://d2r9epyceweg5n.cloudfront.net/stores/001/205/102/products/remera-lisa-vi-rj1-122009f0e7fe0bfa3715906956218434-480-0.jpg"
+        img: "./img/remera.jpg"
     },
     {
         id: 1,
         nombre: "Camisa",
         precio: 1000,
-        img: "https://media.revistagq.com/photos/60950644235a5910299c9327/master/w_1600%2Cc_limit/hbeu50451093_100_100.jpg"
+        img: "./img/camisa.png"
     },
 
     {
         id: 2,
         nombre: "Short",
         precio: 1200,
-        img: "https://almacenessi.vteximg.com.br/arquivos/ids/223162-1200-1300/ropa-nina-shortcorto-256619-7001-azulindigo_1.jpg?v=637534925910270000"
+        img: "./img/short.png"
     },
 
 ]
 
-
-let carrito = [];
+//  variable para detectar si tenemos algo en el storage o lo iniciamos vacio
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 // Recorrido de Array, para generar la CARDS de productos en el DOM
 
@@ -44,7 +45,8 @@ productos.forEach((producto) => {
     // creamos un DIV en el HTML para agregar los productos
     let content = document.createElement("div");
     content.className = "card"; // le asignamos una clase para darle estilos.
-    content.innerHTML = `<img src="${producto.img}">
+    content.innerHTML = `
+        <img src= "${producto.img}">
         <h3>${producto.nombre}</h3>
         <p class="price">$ ${producto.precio}</p> 
     `;
@@ -69,15 +71,19 @@ productos.forEach((producto) => {
             nombre: producto.nombre,
             precio: producto.precio,
         })
+        grabarLocal();
+
     })
 
 });
 
 // le damos funcionalidad al "boton" de carrito
 verCarrito.addEventListener("click", () => {
-
+    
+    // productosCarrito.innerText =`Tienes ${productos.length()} productos`;
+    // productosCarrito.append();
     //creamos un contenedor con un Header, un body y un footer
-
+    
     //header del MODAL que contiene un titulo y una "X" para cerrarlo
     modalContainer.innerHTML = "";
     modalContainer.style.display = "flex";
@@ -86,14 +92,14 @@ verCarrito.addEventListener("click", () => {
     modalHeader.innerHTML = `
     <h1 class ="modal-header-tittle"> Tu compra! </h1>  
     `;
-
+    
     modalContainer.append(modalHeader);
-
+    
     const modalButton = document.createElement("h1");
     modalButton.innerText = "❌";
     modalButton.className = "modal-header-button";
-
-
+    
+    
     // con este evento cerramos el DISPLAY
     modalButton.addEventListener("click", () => {
         modalContainer.style.display = "none";
@@ -108,7 +114,7 @@ verCarrito.addEventListener("click", () => {
         let carritoContent = document.createElement("div");
         carritoContent.className = "modal-Content";
         carritoContent.innerHTML = `
-        <img src=${productos.img}">
+        <img src="${productos.img}">
         <h3> ${productos.nombre}</h3>
         <p>$ ${productos.precio}</p>        
         `
@@ -126,5 +132,16 @@ verCarrito.addEventListener("click", () => {
     console.log(totalCompra);
 
 })
+
+// localStorage
+
+const grabarLocal = () =>{
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+}
+
+
+
+
 
 

@@ -13,7 +13,7 @@ body{
 .navbar {
     display: flex;
     justify-content: space-between;
-    height: 12vh;
+    height: 15vh;
     background-color: rgba(66, 55, 53, 255);
 }
 
@@ -40,34 +40,6 @@ body{
     opacity: 0.7;
 }
 
-/* Estilos del banner */
-
-.banner {
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://img.freepik.com/vector-premium/gran-tienda-moda-supermercado-ropa-femenina-centro-comercial-banner-interior-espacio-copia_48369-11922.jpg?w=996");
-}
-
-.banner-container {
-    text-align: center;
-    padding: 15% 0;
-}
-
-.banner h1 {
-    margin: 0;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    font-size: 62px;
-    font-weight: bold;
-}
-
-.banner p {
-    font-size: 30px;
-    color: white;
-    opacity: 0.7;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-}
 
 /* Cards de productos */
 
