@@ -80,8 +80,6 @@ productos.forEach((producto) => {
 // le damos funcionalidad al "boton" de carrito
 verCarrito.addEventListener("click", () => {
     
-    // productosCarrito.innerText =`Tienes ${productos.length()} productos`;
-    // productosCarrito.append();
     //creamos un contenedor con un Header, un body y un footer
     
     //header del MODAL que contiene un titulo y una "X" para cerrarlo
