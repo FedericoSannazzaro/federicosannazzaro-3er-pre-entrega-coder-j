@@ -1,6 +1,5 @@
-body{
+body {
     background-color: #d0c5bf
-
 }
 
 
@@ -25,7 +24,7 @@ body{
     cursor: pointer;
 }
 
-.navbar-logo:hover{
+.navbar-logo:hover {
     opacity: 0.7;
 }
 
@@ -36,14 +35,14 @@ body{
     cursor: pointer;
 }
 
-.ver-carrito:hover{
+.ver-carrito:hover {
     opacity: 0.7;
 }
 
 
 /* Cards de productos */
 
-.shop-content{
+.shop-content {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -53,32 +52,32 @@ body{
 
 }
 
-.card{
+.card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 300px;
     text-align: center;
     margin: auto;
     font: arial;
-        
+
 }
 
-.card:hover{
+.card:hover {
     transform: scale(1.01);
     transition: 0.3s;
     position: relative;
 }
 
-.card > img{
+.card>img {
     width: 225px;
     height: 250px;
 }
 
 .price {
     color: gray;
-        font-size: 22px;
+    font-size: 22px;
 }
 
-.card button{
+.card button {
     border: none;
     outline: 0;
     padding: 12px;
@@ -87,13 +86,13 @@ body{
 
 }
 
-.card button:hover{
+.card button:hover {
     opacity: 0.7;
 }
 
 /* Estilos del modal */
 
-.modal-container{
+.modal-container {
     width: 80%;
     margin: 0 10%;
     max-height: 88vh;
@@ -111,11 +110,11 @@ body{
 
 }
 
-.modal-container::-webkit-scrollbar{
+.modal-container::-webkit-scrollbar {
     display: none;
 }
 
-.modal-header{
+.modal-header {
     display: flex;
     justify-content: space-around;
     background-color: #383331;
@@ -123,29 +122,31 @@ body{
     width: 100%;
 }
 
-.modal-header-tittle{
+.modal-header-tittle {
     justify-self: start;
 }
 
-.modal-header-button{
+.modal-header-button {
     cursor: pointer;
 }
 
-.modal-container > .modal-content{
+.modal-container>.modal-content {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     width: 70%;
     margin: 10px;
+    color: black;
+    font-size: 1.1rem;
 }
 
-.modal-container > div > img{
+.modal-container>div>img {
     height: 120px;
     width: 120px;
 }
 
-.total-content{
+.total-content {
     font-size: 25px;
     padding: 20px;
     text-align: center;
@@ -154,3 +155,35 @@ body{
 
 }
 
+.delete-product {
+    cursor: pointer;
+}
+
+.cantidad-carrito{
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 4px;
+    top: 37px;
+    right: 14px;
+    position: absolute;
+    display: none;
+}
+
+.sumar{
+    cursor: pointer;
+}
+
+.restar{
+    cursor: pointer;
+}
+
+#clima{
+    display: flex;
+    justify-content: flex-end;
+    color:#3B7874;
+    font-size: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-right: 10px;
+}
